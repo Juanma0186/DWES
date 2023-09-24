@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: lightgray;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 500px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, blue, coral);
+}
+
+p {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.firma {
+  float: left;
+  font-style: italic;
+  font-size: 12px;
+
+}
+
+.fecha {
+  float: right;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: auto;
+  width: fit-content;
+  font-size: 30px;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, blue, coral);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background: lightblue;
+  color: black;
+  border-radius: 10px;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: lightcoral;
+  color: white;
+  cursor: pointer;
+}
