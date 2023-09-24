@@ -39,29 +39,36 @@ if (isset($_POST['submit'])) {
     contar($frase);
     $esPalindromo = palindromo($frase);
 }
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio Cadenas</title>
+    <style>
+
+    </style>
 </head>
+
 <body>
-<form action="" method="post">
-    <label>Introduce una frase</label>
-    <input type="text" name="frase" value="<?= $frase ?>">
-    <button type="submit" name="submit"">Analiza</button>
+    <form action="" method="post">
+        <label>Introduce una frase</label>
+        <input type="text" name="frase" value="<?= $frase ?>">
+        <button type="submit" name="submit"">Analiza</button>
 </form>
 
-<div id="resultado" class="resultado" style="display:none;">
-  <p>El número total de vocales es: <?= $vocales ?></p>
-  <p>El número total de consonantes es: <?= $consonantes ?></p>
-  <p>Es palíndromo: <?= $esPalindromo ?></p>
-</div>
+<div id=" resultado" class="resultado" style="display:none;">
+            <p>El número total de vocales es: <?= $vocales ?></p>
+            <p>El número total de consonantes es: <?= $consonantes ?></p>
+            <p>Es palíndromo: <?= $esPalindromo ?></p>
+            </div>
 
-<script>
-</script>
+            <script>
+            </script>
 </body>
+
 </html>
