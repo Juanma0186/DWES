@@ -24,7 +24,7 @@ function magia(string $tag = "li", mixed ...$contenido): void
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicio prueba</title>
+  <title>Funciones 1</title>
 </head>
 
 <body>
