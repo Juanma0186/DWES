@@ -45,10 +45,15 @@ $caracter = "*";
     <h1>Pirámide de Asteriscos</h1>
     <div class="piramide">
       <?php for ($i = 0; $i < $width; $i++) {
+
         for ($j = 0; $j < $i; $j++) { ?>
+
           <span><?= $caracter ?></span>
+
         <?php }; ?>
+
         <br>
+
       <?php }; ?>
     </div>
   </div>
