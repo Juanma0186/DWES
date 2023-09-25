@@ -1,32 +1,36 @@
-<?php
+<!-- magia('li',"Hola Mundo", 3, 3.14)
 
-function concatenar(string ...$cadenas): string
+<li>Hola Mundo</li>
+<li>3</li>
+<li>3.14</li> 
+
+magia('li',"Esto solo")
+-->
+
+<?php
+function magia(string $tag = "li", mixed ...$contenido): void
 {
 
-  $cadena_final = "";
+  for ($i = 0; $i < count($contenido); $i++) {
 
-  foreach ($cadenas as $cadena) {
-    $cadena_final += " " + $cadena;
+    echo "<$tag>$contenido[$i]</$tag>";
   }
-
-  return $cadena_final;
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Funciones 1</title>
+  <title>Ejercicio prueba</title>
 </head>
 
 <body>
-  <p>
-    <?= concatenar("Hola", "que", "tal", "estas", "?") ?>
-  </p>
+  <div class="container">
+    <?= magia("li", "Hola Mundo", 3, 3.14) ?>
+  </div>
 </body>
 
 </html>
