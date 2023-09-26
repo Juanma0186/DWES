@@ -1,6 +1,6 @@
 <?php
 
-$multiplicacion = function (int $num1, int $num2): int {
+$multiplicar = function (int $num1, int $num2): int {
 
   return $num1 * $num2;
 }
@@ -18,7 +18,7 @@ $multiplicacion = function (int $num1, int $num2): int {
 
 <body>
   <p>
-    <?= $multiplicacion(4, 5) ?>
+    <?= $multiplicar(4, 5) ?>
   </p>
 </body>
 

@@ -13,8 +13,12 @@ function invertir(string $cadena): string
 
 //Acumulador y Array
 
-function acumulador(int $acumulador, $enteros): int
+/**
+ * @param bool $reset Si es true, resetea el acumulador a 0, por defecto es false
+ */
+function acumulador(int $acumulador, array $enteros, bool $reset = false): int
 {
+  $acumulador = $reset ? 0 : $acumulador;
   foreach ($enteros as $numero) {
     $acumulador += $numero;
   }
@@ -22,7 +26,7 @@ function acumulador(int $acumulador, $enteros): int
 }
 
 //Combinada
-function sumarValores(&$acumulador, ...$valores)
+function sumarValores(&$acumulador, mixed ...$valores)
 {
   foreach ($valores as $valor) {
     if (is_numeric($valor)) {
@@ -44,7 +48,8 @@ function sumarValores(&$acumulador, ...$valores)
 
 <body>
   <p><?= invertir("Hola Mundo!") ?></p>
-  <p><?= acumulador(0, [1, 232, 5657, 675, 345]) ?></p>
+  <p><?= acumulador(100, [1, 232, 5657, 675, 345]) ?></p>
+  <p><?= acumulador(100, [1, 232, 5657, 675, 345], true) ?></p>
 </body>
 
 </html>

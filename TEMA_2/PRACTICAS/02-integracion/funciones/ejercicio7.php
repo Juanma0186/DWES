@@ -1,11 +1,46 @@
 <?php
 
-$impar = function () {
+$impar = function ($num) {
+  return $num % 2 != 0;
 };
 
+function esImpar($impar, mixed ...$valores): array
+{
+  foreach ($valores as $k => $valor) {
+    if ($impar($valor)) {
+      $arrayImpares[$k] = $valor;
+    }
+  }
 
+  return $arrayImpares;
+}
 
-// Array con [1, 7]
+function esPrimo(array $valores): array
+{
+  foreach ($valores as $k => $valor) {
+    $esPrimo = true;
+    for ($i = 2; $i < $valor; $i++) {
+      if ($valor % $i == 0) {
+        $esPrimo = false;
+        break;
+      }
+    }
+    if ($esPrimo) {
+      $arrayPrimos[$k] = $valor;
+    }
+  }
+
+  return $arrayPrimos;
+}
+
+function alCubo(array $valores): array
+{
+  foreach ($valores as $k => $valor) {
+    $arrayCubos[$k] = $valor ** 3;
+  }
+
+  return $arrayCubos;
+}
 
 ?>
 
@@ -19,7 +54,11 @@ $impar = function () {
 </head>
 
 <body>
-
+  <?= print_r(esImpar($impar, 1, 4, 56, 7, 8, 57, 34, 293, 231)); ?>
+  <br>
+  <?= print_r(esPrimo(esImpar($impar, 1, 4, 56, 7, 8, 57, 34, 293, 231))); ?>
+  <br>
+  <?= print_r(alCubo(esPrimo(esImpar($impar, 1, 4, 56, 7, 8, 57, 34, 293, 231)))); ?>
 </body>
 
 </html>

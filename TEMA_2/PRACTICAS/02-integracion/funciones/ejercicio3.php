@@ -1,15 +1,34 @@
 <?php
 
-function concatenaCon(string $cadena, mixed ...$parametros): string
+$cosas = ["hola", "que", "tal", "estas", "?"];
+
+function concatenaCon(string $union = ' ', mixed ...$parametros): string
 {
 
-  foreach ($parametros as $concatenado) {
+  $cadena = "";
 
-    $cadena .= " " . $concatenado;
+  foreach ($parametros as $k => $concatenado) {
+
+    $cadena .= $concatenado;
+    if ($k != count($parametros) - 1) {
+      $cadena .= $union;
+    }
   }
 
   return $cadena;
 }
+
+function concatenaConModificado(string &$salida, string $union = ' ', mixed ...$parametros): void
+{
+
+  $salida = concatenaCon($union, ...$parametros);
+}
+
+$msg = '';
+
+concatenaConModificado($msg, " con ", "primer elemento", 122314, "3º parametro");
+
+echo $msg;
 
 ?>
 
@@ -25,7 +44,9 @@ function concatenaCon(string $cadena, mixed ...$parametros): string
 <body>
 
   <p>
-    <?= concatenaCon("Cadena inicial: ", "primer elemento", 122314, "3º parametro") ?>
+    <?= concatenaCon(" con ", "primer elemento", 122314, "3º parametro") ?>
+    <!--También se pueden usar los ... para pasarle un array-->
+    <?= concatenaCon(" con ", ...$cosas) ?>
   </p>
 
 </body>
