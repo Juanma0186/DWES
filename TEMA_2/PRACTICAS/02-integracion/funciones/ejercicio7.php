@@ -6,9 +6,9 @@ $impar = function ($num) {
 
 function esImpar(callable $impar, mixed ...$valores): array
 {
-  foreach ($valores as $k => $valor) {
+  foreach ($valores as $valor) {
     if ($impar($valor)) {
-      $arrayImpares[$k] = $valor;
+      $arrayImpares[] = $valor;
     }
   }
 
@@ -17,7 +17,7 @@ function esImpar(callable $impar, mixed ...$valores): array
 
 function esPrimo(array $valores): array
 {
-  foreach ($valores as $k => $valor) {
+  foreach ($valores as $valor) {
     $esPrimo = true;
     for ($i = 2; $i < $valor; $i++) {
       if ($valor % $i == 0) {
@@ -26,7 +26,7 @@ function esPrimo(array $valores): array
       }
     }
     if ($esPrimo) {
-      $arrayPrimos[$k] = $valor;
+      $arrayPrimos[] = $valor;
     }
   }
 
@@ -35,8 +35,8 @@ function esPrimo(array $valores): array
 
 function alCubo(array $valores): array
 {
-  foreach ($valores as $k => $valor) {
-    $arrayCubos[$k] = $valor ** 3;
+  foreach ($valores as $valor) {
+    $arrayCubos[] = $valor ** 3;
   }
 
   return $arrayCubos;
