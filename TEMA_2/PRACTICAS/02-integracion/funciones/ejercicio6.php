@@ -35,6 +35,14 @@ function sumarValores(&$acumulador, mixed ...$valores)
   }
 }
 
+function acumula(int &$acumulador, ...$valores): void
+{
+  if (is_array($valores[0])) {
+    $acumulador;
+  } else {
+  }
+}
+
 ?>
 
 <!DOCTYPE html>

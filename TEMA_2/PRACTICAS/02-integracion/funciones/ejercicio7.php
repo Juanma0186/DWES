@@ -4,7 +4,7 @@ $impar = function ($num) {
   return $num % 2 != 0;
 };
 
-function esImpar($impar, mixed ...$valores): array
+function esImpar(callable $impar, mixed ...$valores): array
 {
   foreach ($valores as $k => $valor) {
     if ($impar($valor)) {
