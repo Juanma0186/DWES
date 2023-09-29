@@ -6,9 +6,11 @@ $alumnos = [
   ["nombre" => "Carlos", "edad" => 21, "curso" => "Inglés"],
 ];
 
+$alumnoJoven = $alumnos[2];
+
 function encontrarJoven(array $alumnos)
 {
-  $alumnoJoven = null;
+  global $alumnoJoven;
   $i = 0;
   while ($i < count($alumnos)) {
     if ($alumnoJoven == null || $alumnos[$i]["edad"] < $alumnoJoven["edad"]) {
@@ -22,7 +24,7 @@ function encontrarJoven(array $alumnos)
 function compararEdad($alumno)
 {
   global $alumnoJoven;
-  if ($alumnoJoven == null || $alumno["edad"] < $alumnoJoven["edad"]) {
+  if ($alumno["edad"] < $alumnoJoven["edad"]) {
     $alumnoJoven = $alumno;
   }
 }
@@ -72,7 +74,6 @@ function imprimirFila($alumno)
   <hr>
   <h1>Array_Map</h1>
   <p><?php
-      $alumnoJoven = null;
       array_map("compararEdad", $alumnos);
       echo "El alumno más joven es " . $alumnoJoven["nombre"] . " y tiene " . $alumnoJoven["edad"] . " años.";
       ?></p>
