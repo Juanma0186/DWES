@@ -4,9 +4,10 @@ $alumnos = [
   ["nombre" => "Juan", "edad" => 20, "curso" => "Matemáticas"],
   ["nombre" => "Ana", "edad" => 19, "curso" => "Historia"],
   ["nombre" => "Carlos", "edad" => 21, "curso" => "Inglés"],
+  ["nombre" => "María", "edad" => 17, "curso" => "Lengua"],
 ];
 
-$alumnoJoven = $alumnos[2];
+$alumnoJoven = $alumnos[0];
 
 function encontrarJoven(array $alumnos)
 {

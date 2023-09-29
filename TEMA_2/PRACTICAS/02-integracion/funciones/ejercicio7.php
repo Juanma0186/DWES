@@ -42,6 +42,33 @@ function alCubo(array $valores): array
   return $arrayCubos;
 }
 
+function esCapicua(array $valores): array
+{
+  $arrayCapicuas = [];
+  foreach ($valores as $valor) {
+    $valorInvertido = strrev($valor);
+    if ($valor == $valorInvertido) {
+      $arrayCapicuas[] = $valor;
+    }
+  }
+
+  return $arrayCapicuas;
+}
+
+function dividirNumero(array $valores, int $posicion): array
+{
+  $numeroADividir = null;
+  for ($i = 0; $i < count($valores); $i++) {
+    if ($i == $posicion && $posicion <= count($valores) - 1) {
+      $numeroADividir = $valores[$i];
+    }
+  }
+
+  $numeroDividido = array_map('intval', str_split($numeroADividir));
+
+  return $numeroDividido;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +85,11 @@ function alCubo(array $valores): array
   <br>
   <?= print_r(esPrimo(esImpar($impar, 1, 4, 56, 7, 8, 57, 34, 293, 231))); ?>
   <br>
+  <?= print_r(esCapicua(esImpar($impar, 1, 4, 56, 7, 8, 57, 34, 293, 12321))); ?>
+  <br>
   <?= print_r(alCubo(esPrimo(esImpar($impar, 1, 4, 56, 7, 8, 57, 34, 293, 231)))); ?>
+  <br>
+  <?= print_r(dividirNumero([1, 4, 56, 7, 8, 57, 34, 293, 231], 2)); ?>
 </body>
 
 </html>
