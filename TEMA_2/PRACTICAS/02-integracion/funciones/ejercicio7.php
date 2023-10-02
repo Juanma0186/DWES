@@ -19,7 +19,7 @@ function esPrimo(array $valores): array
 {
   foreach ($valores as $valor) {
     $esPrimo = true;
-    for ($i = 2; $i < $valor; $i++) {
+    for ($i = 2; $i < sqrt($valor); $i++) { //Si el numero no es divisible hasta su raíz cuadrada , no será divisible por ninguno hasta n.
       if ($valor % $i == 0) {
         $esPrimo = false;
         break;

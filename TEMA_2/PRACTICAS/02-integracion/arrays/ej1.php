@@ -11,6 +11,18 @@ function imprimirFila($fruta, $precio)
   echo "</tr>";
 }
 
+function sLista(array $info, string $tipo = 'ol'): string //Los valores por defecto siempre deberán ir al final de los parámetros de la función
+{
+  $html = "<$tipo>";
+
+  foreach ($info as $i) {
+    $html .= "<li>$i</li>";
+  }
+
+  $html .= "</$tipo>";
+  return $html;
+}
+
 ?>
 
 <!DOCTYPE html>
