@@ -22,6 +22,18 @@ function encontrarJoven(array $alumnos)
   return $alumnoJoven;
 }
 
+function alumnoJovenReduce(array $alumnos)
+{
+  $alumnoJovenReduce =  array_reduce($alumnos, function ($anterior, $posterior) {
+    if ($posterior["edad"] < $anterior["edad"]) {
+      return $posterior;
+    }
+    return $anterior;
+  }, $alumnos[0]);
+
+  return $alumnoJovenReduce;
+}
+
 function compararEdad($alumno)
 {
   global $alumnoJoven;
@@ -90,6 +102,8 @@ function imprimirFila($alumno)
           array_map("imprimirFila", $alumnos);
           ?>
   </table>
+  <p>
+    <?php printf("El alumno más joven es %s y tiene %d años", alumnoJovenReduce($alumnos)["nombre"], alumnoJovenReduce($alumnos)["edad"]); ?>
   </p>
 </body>
 
