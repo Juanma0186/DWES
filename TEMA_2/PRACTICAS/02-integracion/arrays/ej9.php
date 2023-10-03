@@ -19,7 +19,31 @@ function añadirTarea($nombre, $fecha, $asignatura, $descripcion)
   file_put_contents(FILE_NAME, $s);
 }
 
-if (isset($_POST['añadir'])) {
+function eliminarTareasSeleccionadas($tareas, $seleccionadas)
+{
+  $nuevasTareas = [];
+  foreach ($tareas as $indice => $tarea) {
+    if (!in_array($indice, $seleccionadas)) {
+      $nuevasTareas[] = $tarea;
+    }
+  }
+  return $nuevasTareas;
+}
+
+if (isset($_POST['eliminar'])) {
+  $seleccionadas = isset($_POST['seleccionadas']) ? $_POST['seleccionadas'] : [];
+  $tareas = eliminarTareasSeleccionadas($tareas, $seleccionadas);
+
+  // Guardar el nuevo array de tareas en el archivo
+  $s = serialize($tareas);
+  file_put_contents(FILE_NAME, $s);
+
+  // Redirigir a la misma página para mostrar las tareas actualizadas
+  header("Location: ej9.php");
+  exit;
+}
+
+if (isset($_POST['nombre'])) {
   $nombre = $_POST['nombre'];
   $fecha = $_POST['fecha'];
   $asignatura = $_POST['asignatura'];
@@ -78,33 +102,62 @@ if (isset($_POST['añadir'])) {
       font-weight: bold;
       font-style: italic;
     }
+
+    .container {
+      display: grid;
+      place-items: center;
+    }
+
+    .delete {
+      margin-top: 1em;
+      padding: 10px;
+      border: 3px solid #000;
+      text-align: center;
+      background-color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .delete:hover {
+      border-color: red;
+      color: red;
+    }
   </style>
 </head>
 
 <body>
-  <table>
-    <caption>TODO List</caption>
-    <thead>
-      <tr>
-        <td>Nombre</td>
-        <td>Fecha</td>
-        <td>Asignatura</td>
-        <td>Descripción</td>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      foreach ($tareas as $tarea) {
-        echo "<tr>";
-        echo "<td>$tarea[nombre]</td>";
-        echo "<td>$tarea[fecha]</td>";
-        echo "<td>$tarea[asignatura]</td>";
-        echo "<td>$tarea[descripcion]</td>";
-        echo "</tr>";
-      }
-      ?>
-    </tbody>
-  </table>
+
+  <form action="ej9.php" method="post">
+    <table>
+      <caption>TODO List</caption>
+      <thead>
+        <tr>
+          <td>Eliminar</td>
+          <td>Nombre</td>
+          <td>Fecha</td>
+          <td>Asignatura</td>
+          <td>Descripción</td>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($tareas as $indice => $tarea) {
+          echo "<tr>";
+          echo "<td><input type='checkbox' name='seleccionadas[]' value='$indice'></td>";
+          echo "<td>$tarea[nombre]</td>";
+          echo "<td>$tarea[fecha]</td>";
+          echo "<td>$tarea[asignatura]</td>";
+          echo "<td>$tarea[descripcion]</td>";
+          echo "</tr>";
+        }
+        ?>
+      </tbody>
+    </table>
+    <div class="container">
+      <button class="delete" type="submit" name="eliminar">Eliminar</button>
+    </div>
+  </form>
+  </div>
 
   <div class="annadir">
     <form action="ej9.php" method="post">
