@@ -9,14 +9,17 @@ if (file_exists(FILE_NAME) && filesize(FILE_NAME) > 0) {
   $tareas = [];
 }
 
-function añadirTarea($nombre, $fecha, $asignatura, $descripcion)
+function guardar($tareas)
 {
-  global $tareas;
-  array_push($tareas, ["nombre" => $nombre, "fecha" => $fecha, "asignatura" => $asignatura, "descripcion" => $descripcion]);
-
-  //Guardamos el array en el archivo
   $s = serialize($tareas);
   file_put_contents(FILE_NAME, $s);
+}
+
+function añadirTarea($nombre, $fecha, $asignatura, $descripcion, $tareas)
+{
+  array_push($tareas, ["nombre" => $nombre, "fecha" => $fecha, "asignatura" => $asignatura, "descripcion" => $descripcion]);
+
+  guardar($tareas);
 }
 
 function eliminarTareasSeleccionadas($tareas, $seleccionadas)
@@ -35,9 +38,7 @@ if (isset($_POST['eliminar'])) {
   $seleccionadas = isset($_POST['seleccionadas']) ? $_POST['seleccionadas'] : [];
   $tareas = eliminarTareasSeleccionadas($tareas, $seleccionadas);
 
-  // Guardar el nuevo array de tareas en el archivo
-  $s = serialize($tareas);
-  file_put_contents(FILE_NAME, $s);
+  guardar($tareas);
 
   // Redirigir a la misma página para mostrar las tareas actualizadas
   header("Location: ej9.php");
@@ -50,7 +51,7 @@ if (isset($_POST['nombre'])) {
   $asignatura = $_POST['asignatura'];
   $descripcion = $_POST['descripcion'];
 
-  añadirTarea($nombre, $fecha, $asignatura, $descripcion);
+  añadirTarea($nombre, $fecha, $asignatura, $descripcion, $tareas);
 
   //Redirigimos a la misma pagina para que no se envie el formulario al recargar y se repita la misma tarea varias veces
   header("Location: ej9.php");
@@ -120,6 +121,7 @@ if (isset($_POST['nombre'])) {
     }
 
     .delete:hover {
+      cursor: pointer;
       border-color: red;
       color: red;
     }
