@@ -1,8 +1,10 @@
 <?php
+//Comprobamos que el archivo existe y que no esta vacio
 if (file_exists('store.dat') && filesize('store.dat') > 0) {
   $s = file_get_contents('store.dat');
   $tareas = unserialize($s);
 } else {
+  //Si no existe o esta vacio creamos un array vacio de tareas
   $tareas = [];
 }
 
@@ -10,6 +12,8 @@ function añadirTarea($nombre, $fecha, $asignatura, $descripcion)
 {
   global $tareas;
   array_push($tareas, ["nombre" => $nombre, "fecha" => $fecha, "asignatura" => $asignatura, "descripcion" => $descripcion]);
+
+  //Guardamos el array en el archivo
   $s = serialize($tareas);
   file_put_contents('store.dat', $s);
 }
@@ -22,6 +26,7 @@ if (isset($_POST['añadir'])) {
 
   añadirTarea($nombre, $fecha, $asignatura, $descripcion);
 
+  //Redirigimos a la misma pagina para que no se envie el formulario al recargar y se repita la misma tarea varias veces
   header("Location: ej9.php");
   exit;
 }
