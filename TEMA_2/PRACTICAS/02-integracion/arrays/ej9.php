@@ -31,6 +31,7 @@ function eliminarTareasSeleccionadas($tareas, $seleccionadas)
 }
 
 if (isset($_POST['eliminar'])) {
+
   $seleccionadas = isset($_POST['seleccionadas']) ? $_POST['seleccionadas'] : [];
   $tareas = eliminarTareasSeleccionadas($tareas, $seleccionadas);
 
@@ -177,6 +178,7 @@ if (isset($_POST['nombre'])) {
         <input type="text" name="descripcion" id="descripcion" required>
         <br>
         <input type="submit" value="Añadir tarea" name="añadir">
+      </fieldset>
     </form>
   </div>
 </body>
