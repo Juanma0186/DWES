@@ -69,6 +69,7 @@ if (isset($_POST['añadir'])) {
       font-size: 30px;
       font-weight: bold;
       font-style: italic;
+      font-family: 'Courier New', Courier, monospace;
     }
 
     thead {
