@@ -65,6 +65,12 @@ if (isset($_POST['añadir'])) {
       padding: 15px;
     }
 
+    caption {
+      font-size: 30px;
+      font-weight: bold;
+      font-style: italic;
+    }
+
     thead {
       font-size: 20px;
       font-weight: bold;
@@ -75,6 +81,7 @@ if (isset($_POST['añadir'])) {
 
 <body>
   <table>
+    <caption>TODO List</caption>
     <thead>
       <tr>
         <td>Nombre</td>
