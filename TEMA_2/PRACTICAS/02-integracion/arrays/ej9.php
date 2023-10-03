@@ -1,8 +1,8 @@
 <?php
 define("FILE_NAME", "store.dat");
 //Comprobamos que el archivo existe y que no esta vacio
-if (file_exists('FILE_NAME') && filesize('FILE_NAME') > 0) {
-  $s = file_get_contents('FILE_NAME');
+if (file_exists(FILE_NAME) && filesize(FILE_NAME) > 0) {
+  $s = file_get_contents(FILE_NAME);
   $tareas = unserialize($s);
 } else {
   //Si no existe o esta vacio creamos un array vacio de tareas
@@ -16,7 +16,7 @@ function añadirTarea($nombre, $fecha, $asignatura, $descripcion)
 
   //Guardamos el array en el archivo
   $s = serialize($tareas);
-  file_put_contents('FILE_NAME', $s);
+  file_put_contents(FILE_NAME, $s);
 }
 
 if (isset($_POST['añadir'])) {
