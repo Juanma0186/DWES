@@ -16,7 +16,6 @@ function aplastalo(...$valores)
 function aplastalo2(...$valores)
 {
   $result = [];
-  $valores = [[0, 3], 42];
 
   while (!empty($valores)) {
     $element = array_shift($valores);
@@ -33,9 +32,6 @@ function aplastalo2(...$valores)
   return $result;
 }
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +45,7 @@ function aplastalo2(...$valores)
 
 <body>
   <p>
-    El array tiene [<?= implode(",", aplastalo2([0], 42)) ?>]
+    El array tiene [<?= implode(",", aplastalo2([0], 42, [2, 3])) ?>]
   </p>
 </body>
 

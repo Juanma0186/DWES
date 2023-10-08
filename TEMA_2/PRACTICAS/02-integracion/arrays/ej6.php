@@ -129,19 +129,7 @@ if (isset($_POST['buscar'])) {
     <input type="submit" name="buscar" value="Buscar">
   </form>
   <hr>
-  <p>
-    <?php
-
-    if (isset($_POST['buscar']) && $nombreLibro != "" && $nombreLibro == array_search($nombreLibro, array_column($libros, 'titulo'))) {
-      echo $msg = "El libro $nombreLibro está disponible";
-    } else if (isset($_POST['buscar']) && $nombreLibro != "" && $nombreLibro != array_search($nombreLibro, array_column($libros, 'titulo'))) {
-      echo $msg = "El libro $nombreLibro no está disponible";
-    } else {
-      echo $msg = "";
-    }
-    ?>
-  </p>
-  <table border="1">
+  <table>
     <tr>
       <th>Libro</th>
       <th>Autor</th>
