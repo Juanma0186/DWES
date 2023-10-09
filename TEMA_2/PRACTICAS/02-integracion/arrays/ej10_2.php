@@ -43,8 +43,6 @@ if (isset($_POST['titulo'])) {
     annadirPeli($titulo, $peliculas, $valoracion);
   }
 
-
-
   //Redirigimos a la misma pagina para que no se envie el formulario al recargar y se repita la misma tarea varias veces
   header("Location: ej10_2.php");
   exit;
