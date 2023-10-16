@@ -62,9 +62,6 @@ class Planeta implements JsonSerializable
     return $this->distanciaSol;
   }
 
-
-
-
   //Métodos
 
   public function mostrar(string $container = "div", string $etiqueta = "span")
