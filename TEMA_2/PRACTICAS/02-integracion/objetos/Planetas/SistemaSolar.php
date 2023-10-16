@@ -10,15 +10,7 @@ class SistemaSolar
   public function guardar()
   {
     $s = json_encode($this->planetas);
-    if ($s === false) {
-      echo "Error al codificar el JSON: " . json_last_error_msg();
-    } else {
-      if (file_put_contents("SistemaSolar.json", $s) === false) {
-        echo "Error al escribir en el archivo.";
-      } else {
-        echo "Guardado exitosamente.";
-      }
-    }
+    file_put_contents("SistemaSolar.json", $s);
   }
 
   public function cargar()
@@ -53,18 +45,23 @@ class SistemaSolar
     echo "<table>";
     echo "<tr><th>Nombre</th><th>Masa</th><th>Diametro</th><th>Distancia al Sol</th></tr>";
 
-    foreach ($this->planetas as $planeta) {
-      $planeta->mostrarFila();
+    for ($i = 0; $i < count($this->planetas); $i++) {
+      echo "<tr>";
+      echo "<td>" . $this->planetas[$i]->getNombre() . "</td>";
+      echo "<td>" . $this->planetas[$i]->getMasa() . "</td>";
+      echo "<td>" . $this->planetas[$i]->getDiametro() . "</td>";
+      echo "<td>" . $this->planetas[$i]->getDistanciaSol() . "</td>";
+      echo "</tr>";
     }
   }
 
-  // public function mostrarTabla()
-  // {
-  //   $tabla = "<table><tr><th>Nombre</th><th>Masa</th><th>Diametro</th><th>Distancia al Sol</th></tr>";
-  //   foreach ($this->planetas as $planeta) {
-  //     $tabla .= $planeta->muestraFila();
-  //   }
-  //   $tabla .= "</table>";
-  //   return $tabla;
-  // }
+  public function mostrarTabla()
+  {
+    $tabla = "<table><tr><th>Nombre</th><th>Masa</th><th>Diametro</th><th>Distancia al Sol</th></tr>";
+    foreach ($this->planetas as $planeta) {
+      $tabla .= $planeta->muestraFila();
+    }
+    $tabla .= "</table>";
+    return $tabla;
+  }
 }

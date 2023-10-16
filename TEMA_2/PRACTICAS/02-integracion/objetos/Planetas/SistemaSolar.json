@@ -1,1 +1,14 @@
-[{"nombre":"Tierra","masa":5.972e+24,"diametro":12,"distanciaSol":149600000},{"nombre":"Marte","masa":6.39e+23,"diametro":6.794,"distanciaSol":227900000}]
+[
+  {
+    "nombre": "Tierra",
+    "masa": 5.972e24,
+    "diametro": 1278,
+    "distanciaSol": 149600000
+  },
+  {
+    "nombre": "Marte",
+    "masa": 6.39e23,
+    "diametro": 6794,
+    "distanciaSol": 227900000
+  }
+]

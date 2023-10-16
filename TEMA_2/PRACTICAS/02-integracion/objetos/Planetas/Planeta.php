@@ -40,6 +40,30 @@ class Planeta implements JsonSerializable
     $this->distanciaSol = $distanciaSol;
   }
 
+  //Getters
+
+  public function getNombre(): string
+  {
+    return $this->nombre;
+  }
+
+  public function getMasa(): float
+  {
+    return $this->masa;
+  }
+
+  public function getDiametro(): float
+  {
+    return $this->diametro;
+  }
+
+  public function getDistanciaSol(): float
+  {
+    return $this->distanciaSol;
+  }
+
+
+
 
   //Métodos
 
@@ -65,25 +89,19 @@ class Planeta implements JsonSerializable
     echo "</form>";
   }
 
-  public static function crear()
+
+  public function crear()
   {
-    echo "<form>";
-    echo "Nombre: <input type='text' name='nombre'><br>";
-    echo "Masa: <input type='text' name='masa'><br>";
-    echo "Diámetro: <input type='text' name='diametro'><br>";
-    echo "Distancia al Sol: <input type='text' name='distancia'><br>";
-    echo "<button type='submit'>Crear</button>";
+    /*Pinta un form para crear un nuevo planeta y que al darle a submit se guarde en el json */
+    echo "<form action='index.php' method='POST'>";
+    echo "<input type='text' name='nombre' placeholder='Nombre'>";
+    echo "<input type='text' name='masa' placeholder='Masa'>";
+    echo "<input type='text' name='diametro' placeholder='Diametro'>";
+    echo "<input type='text' name='distanciaSol' placeholder='Distancia al Sol'>";
+    echo "<button type='submit'>Guardar cambios</button>";
     echo "</form>";
   }
 
-  public function mostrarFila()
-  {
-    echo "<tr>";
-    echo "<td>$this->nombre</td>";
-    echo "<td>$this->masa</td>";
-    echo "<td>$this->diametro</td>";
-    echo "<td>$this->distanciaSol</td></tr>";
-  }
 
   public function jsonSerialize(): mixed
   {
