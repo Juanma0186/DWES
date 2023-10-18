@@ -38,7 +38,7 @@ class CocheGrua extends Coche
     if ($this->cocheCargado != null) {
       $this->cocheCargado = null;
     } else {
-      echo "No hay ningún coche cargado";
+      echo ". No hay ningún coche cargado";
     }
   }
 
@@ -49,7 +49,7 @@ class CocheGrua extends Coche
     if ($this->cocheCargado != null) {
       $cadena .= "\nLleva $this->cocheCargado";
     } else {
-      $cadena .= "Ningún coche cargado";
+      $cadena .= ". Ningún coche cargado";
     }
     return $cadena;
   }
