@@ -338,7 +338,6 @@ if (isset($_POST['reset'])) {
                     </div>
                 </div>
 
-
                 <!--BOTONES-->
                 <div class="botones">
                     <button type="submit" name="enviar"><span>Reservar&nbsp;</span><i class="bi bi-airplane"></i></button>
