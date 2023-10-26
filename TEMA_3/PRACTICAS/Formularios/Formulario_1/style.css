@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.success {
+    width: 100vw;
+    height: 100vh;
+    background: #494949b7;
+    display: block;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.success-msg {
+    width: 500px;
+    height: 200px;
+    border-radius: 8px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background: whitesmoke;
+    color: #71da72;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.success-msg button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: red;
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.success-msg button:hover {
+    background: #b40505;
+}
+
+.formulario {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em
+}
+
+.formulario h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 1em;
+}
+
+.formulario form {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.formulario fieldset {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    border-radius: 8px;
+    background: whitesmoke;
+}
+
+fieldset legend {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+fieldset label {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+fieldset input[type="text"],
+input[type="time"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #223;
+    border-radius: 8px;
+    padding: 0 1em;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border: 1px solid #223;
+    border-radius: 8px;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+}
+
+input[type="radio"]:checked {
+    background: #223;
+    color: whitesmoke;
+
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.botones button {
+    width: 150px;
+    height: 60px;
+    border: none;
+    outline: none;
+    border: 2px solid #223;
+    border-radius: 8px;
+    color: #223;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones button:hover {
+    background: #223;
+    color: whitesmoke;
+}
+
+.botones button:active {
+    transform: scale(0.9);
+}
+
+i {
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 768px) {
+    .formulario {
+        width: 100vw;
+    }
+
+    .formulario form {
+        width: 100%;
+    }
+
+    .formulario fieldset {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .options {
+        padding: 1em;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .options label {
+        font-size: 0.8rem;
+    }
+
+    .options input[type="radio"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    .options input[type="radio"]:checked {
+        background: #223;
+        color: whitesmoke;
+    }
+
+    .botones {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botones button {
+        width: 100%;
+    }
+}
