@@ -1,8 +1,6 @@
 <?php
 
 define('VUELO_DATA', 'vuelo.csv');
-define('USER_DATA', 'user.csv');
-
 
 $msg = "";
 
@@ -27,7 +25,7 @@ $errores = [];
 
 if (isset($_POST['enviar'])) {
 
-    //!COMPROBACIONES DEL VUELO
+    //?COMPROBACIONES DEL VUELO
 
     //Comprobaciones del Origen
     if (isset($_POST['origen']) && $_POST['origen'] != "") {
