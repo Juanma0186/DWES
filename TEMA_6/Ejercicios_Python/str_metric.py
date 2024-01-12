@@ -6,7 +6,6 @@
 def run(text: str) -> int:
     # TU CÓDIGO AQUÍ
 
-    c_count = 0
     v_count = 0
 
     #
