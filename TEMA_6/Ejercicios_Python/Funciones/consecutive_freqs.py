@@ -3,7 +3,7 @@
 # ************************************
 
 
-def cfreq(items: list ,/, as_string=False):
+def cfreq(items: list ,/, as_string:bool)->list|str:
 # Casos vacíos
     if not items:
         return [] if not as_string else ''
@@ -30,7 +30,4 @@ def cfreq(items: list ,/, as_string=False):
     result.append((item_Actual, cont))
 
     # Devolvemos el resultado según as_string
-    if as_string:
-        return ','.join(f'{item}:{cont}' for item, cont in result)
-    else:
-        return result
+    return ','.join(f'{item}:{cont}' for item, cont in result) if as_string else result
