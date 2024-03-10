@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content  %}
+
+<h1>Eliminar Linea</h1>
+<p>¿Estás seguro de que quieres eliminar la linea "{{ object }}"?</p>
+<form method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Confirmar">
+</form>
+<a href="{% url 'incidencias:listado' %}">Cancelar</a>
+
+
+
+
+{% endblock content  %}

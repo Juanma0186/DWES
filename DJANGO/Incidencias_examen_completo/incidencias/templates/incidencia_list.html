@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% for message in messages %}
+    <div class="{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+  <h2>Incidencias</h2>
+  <table>
+    <tr>
+      <th>Fecha</th>
+      <th>Texto</th>
+      <th>Estación</th>
+      <th>Línea</th>
+    </tr>
+    {% for incidencia in incidencias %}
+      <tr>
+        <td>{{ incidencia.fecha }}</td>
+        <td>{{ incidencia.texto }}</td>
+        <td>{{ incidencia.estacion.nombre }}</td>
+        <td>{{ incidencia.estacion.linea.nombre }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

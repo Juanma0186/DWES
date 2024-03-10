@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Pingüinos -{% block title %}
+
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+      {{ user }} <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %} <input type="submit" value="Cerrar sesión" name="logout" />
+      </form>
+    {% else %}
+      <a href="{% url 'login' %}">Iniciar sesión</a>
+    {% endif %}
+    {% block content %}
+
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,26 @@
+#aviso-cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f9edbe;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #f0c36d;
+    z-index: 1000;
+}
+
+#bloqueo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(244, 245, 187, 0.8); 
+    z-index: 999; 
+}
+
+.mostrar{
+    display: block;
+}

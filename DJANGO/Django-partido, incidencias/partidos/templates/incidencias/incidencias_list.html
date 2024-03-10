@@ -1,0 +1,11 @@
+<ul>
+  {% for incidencia in incidencias %}
+    <li>
+      <a href="{% url 'incidencia_detail' incidencia.id %}">
+        <h3>{{ incidencia.titulo }} | ID:{{ incidencia.id }}</h3>
+        <p>{{ incidencia.descripcion }}</p>
+        <p>Enviada por: {{ incidencia.email }}</p>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

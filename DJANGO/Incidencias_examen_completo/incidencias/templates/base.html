@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Incidencias</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'incidencias/css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'incidencias:listado' %}">Listado de Líneas</a></li>
+            <li><a href="{% url 'incidencias:nueva_linea' %}">Nueva Línea</a></li>
+            <li><a href="{% url 'incidencias:nueva_estacion' %}">Nueva Estación</a></li>
+            <li><a href="{% url 'incidencias:incidencia_list' %}">Lista de Incidencias</a></li>
+            <li><a href="{% url 'account_logout' %}">cerrar sesion</a></li>
+        </ul>
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

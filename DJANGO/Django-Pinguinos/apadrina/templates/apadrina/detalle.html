@@ -1,0 +1,14 @@
+{% extends 'apadrina/base.html' %}
+
+{% block title %}
+  {{ object.nombre }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ object.nombre }} {{ object.adoptado|yesno:':),:(,-' }}</h1>
+  <p>
+    Adoptado:<input type="checkbox" value="" {{ object.adoptado|yesno:'checked,,' }} />
+  </p>
+  <p>{{ object.descripcion }}</p>
+  <img src="{{ object.imagen.url }}" alt="" />
+{% endblock %}

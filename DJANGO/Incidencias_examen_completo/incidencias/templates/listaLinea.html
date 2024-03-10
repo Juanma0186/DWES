@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Listado de Líneas y Estaciones</h2>
+  {% for message in messages %}
+    <div class="{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+  {% for linea in lineas %}
+    <h3><a href="{% url 'incidencias:update_linea' linea.id  %}">{{ linea.nombre }}</a></h3> 
+    <a href="{% url 'incidencias:delete_linea' linea.id  %}">Borrar {{ linea.nombre }}</a>
+    {% for estacion in linea.estaciones.all %}
+      <p>
+        {{ estacion.nombre }}
+        <a href="{% url 'incidencias:nueva_incidencia' estacion.id %}">+ nueva incidencia</a>
+      </p>
+    {% endfor %}
+  {% endfor %}
+{% endblock %} 
+
+{% comment %} {% block content %}
+  <h2>Listado de Estaciones</h2>
+  {% for message in messages %}
+    <div class="{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+  {% for estacion in estaciones %}
+    <p>
+      {{ estacion.nombre }} (Línea: {{ estacion.linea.nombre }})
+      <a href="{% url 'incidencias:nueva_incidencia' estacion.id %}">+ nueva incidencia</a>
+    </p>
+  {% endfor %}
+{% endblock %} {% endcomment %}

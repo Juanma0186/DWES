@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+  Detalle de {{ persona.nombre }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ persona.nombre }} {{ persona.apellido1 }} {{ persona.apellido2 }}</h1>
+  <h1>Descripción</h1>
+  <p>{{ persona.descripcion }}</p>
+{% endblock %}

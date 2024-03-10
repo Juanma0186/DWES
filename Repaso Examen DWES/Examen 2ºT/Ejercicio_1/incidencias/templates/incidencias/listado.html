@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <ul>
+    {% for estacion in estaciones %}
+      <li>
+        {{ estacion.linea.nombre }} - {{ estacion.nombre }} <a href="{% url 'incidencias:anadir' estacion.linea.id estacion.id %}">Nueva incidencia</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

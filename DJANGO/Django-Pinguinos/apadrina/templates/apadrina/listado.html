@@ -1,0 +1,14 @@
+{% extends 'apadrina/base.html' %}
+
+{% block title %}
+  Listado de Pingüinos
+{% endblock %}
+{% block content %}
+  <ul>
+    {% for object in object_list %}
+      <li>
+        <a href="{% url 'apadrina:detalle' object.pk %}">{{ object }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

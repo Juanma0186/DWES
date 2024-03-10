@@ -1,0 +1,122 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table tr td a {
+    color: #fff;
+}
+
+table,
+table td,
+table th {
+    border: 1px solid #999;
+    padding: 0.5em;
+}
+
+table th {
+    background-color: #555;
+}
+
+table tr:nth-child(even) {
+    background-color: #444;
+}
+
+div.paginacion a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 0.5em;
+}
+
+div.paginacion {
+    text-align: center;
+    padding: 1em 0;
+}
+
+div.paginacion a.actual {
+    font-weight: bold;
+    color: #0bf;
+}
+
+@media (max-width: 600px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin: 0 0 1em 0;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before {
+        content: "Nombre";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Deberes";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Fecha de entrega";
+    }
+}
+
+form {
+    background-color: #444;
+    padding: 2em;
+    border-radius: 0.5em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+form input[type="text"],
+form input[type="date"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+form input[type="submit"] {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}

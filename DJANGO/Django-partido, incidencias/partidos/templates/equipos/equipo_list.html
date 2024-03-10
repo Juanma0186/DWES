@@ -1,0 +1,10 @@
+{% for equipo in equipos %}
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ equipo.nombre }}</h5>
+        <a href="{% url 'detalle_equipo' equipo.id %}">Ver más</a>
+      </div>
+    </div>
+  </div>
+{% endfor %}

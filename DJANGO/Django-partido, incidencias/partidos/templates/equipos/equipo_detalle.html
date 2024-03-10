@@ -1,0 +1,7 @@
+<h1>{{ equipo.nombre }}</h1>
+<h2>Fue fundado en {{ equipo.ano_fundacion }} en {{ equipo.ciudad }}</h2>
+<ul>
+  {% for partido in partidos %}
+    <li>{{ partido.fecha }} | {{ partido.resultado_local }} - {{ partido.resultado_visitante }}</li>
+  {% endfor %}
+</ul>

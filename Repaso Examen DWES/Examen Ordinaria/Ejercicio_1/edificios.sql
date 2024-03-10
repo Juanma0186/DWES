@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS Edificios;
+
+CREATE TABLE Edificios (
+    id INT PRIMARY KEY AUTO_INCREMENT, nombre VARCHAR(50) NOT NULL, descripcion TEXT NOT NULL, anno INT NOT NULL, estilo VARCHAR(50)
+);

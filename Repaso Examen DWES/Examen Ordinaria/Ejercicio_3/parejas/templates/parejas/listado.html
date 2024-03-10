@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <table>
+    <thead>
+      <tr>
+        <th>Apellido pareja</th>
+        <th>Lugar</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pareja in parejas %}
+        <tr>
+          <td>
+            <a href="{% url 'parejas:detalle' pareja.persona1.id %}">{{ pareja.persona1.apellido1 }}</a>
+            ,
+            <a href="{% url 'parejas:detalle' pareja.persona2.id %}">{{ pareja.persona2.apellido1 }}</a>
+          </td>
+          <td>{{ pareja.lugar }}</td>
+          <td>{{ pareja.fecha_inicio }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
